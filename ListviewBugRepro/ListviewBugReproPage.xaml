@@ -4,9 +4,11 @@
     <ListView HasUnevenRows="true" CachingStrategy="RecycleElement" x:Name="TheListView">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <Label Text="{Binding .}"/>
-                </ViewCell>
+                <local:InstrumentedViewCell>
+                    <local:InstrumentedGrid>
+                        <Label Text="{Binding .}"/>
+                    </local:InstrumentedGrid>
+                </local:InstrumentedViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
