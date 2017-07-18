@@ -21,6 +21,7 @@ namespace ListviewBugRepro.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ReferenceTracking.Start();
 
             LoadApplication(new App());
         }

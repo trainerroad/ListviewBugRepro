@@ -25,7 +25,7 @@ namespace ListviewBugRepro
         static void DisplayCounts(string className)
         {
             Debug.WriteLine($"{className} counts: " +
-                            string.Join(", ", _counts.Keys.Select(k => $"{k}: {_counts[k]}")));
+                            string.Join(", ", _counts.Keys.ToArray().Select(k => $"{k}: {_counts[k]}")));
         }
 
         static InstrumentedGrid()
@@ -39,6 +39,7 @@ namespace ListviewBugRepro
 
         public InstrumentedGrid()
         {
+            ReferenceTracking.Add(this);
             IncrementCount("constructor");
         }
 
