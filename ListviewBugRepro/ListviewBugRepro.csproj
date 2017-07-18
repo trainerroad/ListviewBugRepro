@@ -37,6 +37,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListItemModel.cs" />
     <Compile Include="ListviewBugReproPage.xaml.cs">
       <DependentUpon>ListviewBugReproPage.xaml</DependentUpon>
     </Compile>

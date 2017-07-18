@@ -10,7 +10,7 @@ namespace ListviewBugRepro
 {
     public class ReferenceTracking
     {
-        private static List<WeakReference> _references;
+        private static List<WeakReference> _references = new List<WeakReference>();
 
         public static void Add(object @object)
         {
@@ -19,11 +19,6 @@ namespace ListviewBugRepro
 
         public static void Start()
         {
-            if (_references != null)
-                return;
-
-            _references = new List<WeakReference>();
-
             Observable.Interval(TimeSpan.FromSeconds(2)).Subscribe(_ =>
             {
                 GC.Collect();

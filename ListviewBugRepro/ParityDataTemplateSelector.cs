@@ -15,9 +15,12 @@ namespace ListviewBugRepro
 
 		protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
 		{
-            if (!(item is int))
+		    var model = item as ListItemModel;
+
+            if (model == null)
 				return null;
-			if (((int)item) % 2 == 0)
+
+			if (model.Value % 2 == 0)
 				return EvenTemplate;
 
             return OddTemplate;

@@ -8,7 +8,7 @@
           <DataTemplate>
             <local:InstrumentedViewCell Height="50">
               <local:InstrumentedGrid>
-                <Label Text="{Binding .}" BackgroundColor="Green" />
+                <Label Text="{Binding Value}" BackgroundColor="Green" />
               </local:InstrumentedGrid>
             </local:InstrumentedViewCell>
           </DataTemplate>
@@ -17,7 +17,7 @@
           <DataTemplate>
             <local:InstrumentedViewCell Height="60">
               <local:InstrumentedGrid>
-                <Label Text="{Binding .}" />
+                <Label Text="{Binding Value}" />
               </local:InstrumentedGrid>
             </local:InstrumentedViewCell>
           </DataTemplate>
