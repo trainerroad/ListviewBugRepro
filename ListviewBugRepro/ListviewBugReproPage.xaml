@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ListviewBugRepro" x:Class="ListviewBugRepro.ListviewBugReproPage">
   <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
-  <ListView HasUnevenRows="true" CachingStrategy="RecycleElement" x:Name="TheListView" RowHeight="50">
+  <ListView HasUnevenRows="true" CachingStrategy="RecycleElement" x:Name="TheListView" RowHeight="100">
+        <ListView.Header>
+            <Grid HeightRequest="1000" Padding="15">
+                <Label Text="Hello"/>
+            </Grid>
+        </ListView.Header>
+        <ListView.Footer>
+            <Grid HeightRequest="500">
+                <Label Text="Hello"/>
+            </Grid>
+        </ListView.Footer>
     <ListView.ItemTemplate>
       <local:ParityDataTemplateSelector>
         <local:ParityDataTemplateSelector.OddTemplate>
           <DataTemplate>
-            <local:InstrumentedViewCell Height="50">
-              <local:InstrumentedGrid>
-                <Label Text="{Binding Value}" BackgroundColor="Green" />
+            <local:InstrumentedViewCell Height="10">
+              <local:InstrumentedGrid BackgroundColor="Green">
+                <Label Text="{Binding Value}" />
               </local:InstrumentedGrid>
             </local:InstrumentedViewCell>
           </DataTemplate>
         </local:ParityDataTemplateSelector.OddTemplate>
         <local:ParityDataTemplateSelector.EvenTemplate>
           <DataTemplate>
-            <local:InstrumentedViewCell Height="60">
-              <local:InstrumentedGrid>
+            <local:InstrumentedViewCell Height="50">
+              <local:InstrumentedGrid BackgroundColor="White">
                 <Label Text="{Binding Value}" />
               </local:InstrumentedGrid>
             </local:InstrumentedViewCell>
