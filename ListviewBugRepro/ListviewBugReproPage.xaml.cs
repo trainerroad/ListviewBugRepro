@@ -9,7 +9,7 @@ namespace ListviewBugRepro
         {
             InitializeComponent();
 
-            this.TheListView.ItemsSource = Enumerable.Range(1, 500).Select(v => new ListItemModel(v)).ToArray();
+            this.TheListView.ItemsSource = Enumerable.Range(1, 500).Select(v => ListItemModel.Create(v)).ToArray();
         }
     }
 }

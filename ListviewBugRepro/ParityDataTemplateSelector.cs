@@ -20,10 +20,12 @@ namespace ListviewBugRepro
             if (model == null)
 				return null;
 
-			if (model.Value % 2 == 0)
-				return EvenTemplate;
+		    if (model is EvenListItemModel)
+		        return EvenTemplate;
+            else if (model is OddListItemModel)
+		        return OddTemplate;
 
-            return OddTemplate;
+            return null;
 		}
     }
 }
