@@ -7,8 +7,9 @@
         <local:ParityDataTemplateSelector.OddTemplate>
           <DataTemplate>
             <local:InstrumentedViewCell Height="50">
-              <local:InstrumentedGrid>
-                <Label Text="{Binding Value}" BackgroundColor="Green" />
+              <local:InstrumentedGrid BackgroundColor="Green">
+                <Label Text="{Binding Value}"  />
+                <Label Grid.Column="1" Text="{Binding OddMessage}"  />                
               </local:InstrumentedGrid>
             </local:InstrumentedViewCell>
           </DataTemplate>
@@ -18,6 +19,7 @@
             <local:InstrumentedViewCell Height="60">
               <local:InstrumentedGrid>
                 <Label Text="{Binding Value}" />
+                <Label Grid.Column="1" Text="{Binding EvenMessage}"  />
               </local:InstrumentedGrid>
             </local:InstrumentedViewCell>
           </DataTemplate>

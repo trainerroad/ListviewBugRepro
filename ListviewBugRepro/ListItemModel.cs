@@ -36,6 +36,8 @@ namespace ListviewBugRepro
         {
             Debug.Assert(value % 2 == 1);
         }
+
+        public string OddMessage => "This message is odd.";
     }
 
     public class EvenListItemModel : ListItemModel
@@ -44,5 +46,7 @@ namespace ListviewBugRepro
         {
             Debug.Assert(value % 2 == 0);
         }
+
+        public string EvenMessage => "This model has an even value.";
     }
 }
